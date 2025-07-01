@@ -1,6 +1,10 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import a pixelated font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
@@ -34,22 +38,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -95,9 +92,93 @@
 @layer base {
   * {
     @apply border-border;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    line-height: 1.6;
   }
+}
+
+@layer components {
+  .pixel-border {
+    border-style: solid;
+    border-width: 3px;
+    border-image: url("data:image/svg+xml,%3csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m0,0 L0,8 L8,8 L8,0 Z M16,0 L16,8 L24,8 L24,0 Z' fill='%23000'/%3e%3c/svg%3e") 8;
+  }
+  
+  .pixel-shadow {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .pixel-button {
+    @apply pixel-border pixel-shadow;
+    background: linear-gradient(45deg, #ff6b6b 0%, #ee5a52 50%, #d63031 100%);
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .pixel-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .pixel-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+  
+  .pixel-card {
+    @apply pixel-border pixel-shadow;
+    background: repeating-conic-gradient(from 0deg, #f8f9fa 0deg 90deg, #e9ecef 90deg 180deg);
+  }
+  
+  .pixel-input {
+    @apply pixel-border;
+    background: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    padding: 8px;
+  }
+  
+  .pixel-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+}
+
+/* Pixel-perfect animations */
+@keyframes pixel-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pixel-shake {
+  0%, 100% { transform: translateX(0px); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes pixel-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2) contrast(1.1); }
+}
+
+.pixel-animate-bounce {
+  animation: pixel-bounce 1s infinite;
+}
+
+.pixel-animate-shake {
+  animation: pixel-shake 0.5s ease-in-out;
+}
+
+.pixel-animate-glow {
+  animation: pixel-glow 2s ease-in-out infinite;
 }

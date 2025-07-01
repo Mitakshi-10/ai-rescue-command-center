@@ -10,82 +10,82 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 25% 92%;
+    --foreground: 120 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 88%;
+    --card-foreground: 120 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 25% 88%;
+    --popover-foreground: 120 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 45% 35%;
+    --primary-foreground: 40 25% 92%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 35% 65%;
+    --secondary-foreground: 120 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 20% 80%;
+    --muted-foreground: 120 15% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 25 45% 60%;
+    --accent-foreground: 120 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 25% 92%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 25% 70%;
+    --input: 40 25% 85%;
+    --ring: 120 45% 35%;
 
     --radius: 0rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 25% 88%;
+    --sidebar-foreground: 120 25% 15%;
+    --sidebar-primary: 120 45% 35%;
+    --sidebar-primary-foreground: 40 25% 92%;
+    --sidebar-accent: 30 35% 65%;
+    --sidebar-accent-foreground: 120 25% 15%;
+    --sidebar-border: 30 25% 70%;
+    --sidebar-ring: 120 45% 35%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 120 25% 8%;
+    --foreground: 40 25% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 25% 12%;
+    --card-foreground: 40 25% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 120 25% 12%;
+    --popover-foreground: 40 25% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 120 45% 45%;
+    --primary-foreground: 120 25% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 35% 25%;
+    --secondary-foreground: 40 25% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 120 20% 20%;
+    --muted-foreground: 40 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 45% 40%;
+    --accent-foreground: 40 25% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 40 25% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 120 25% 25%;
+    --input: 120 25% 15%;
+    --ring: 120 45% 45%;
+    --sidebar-background: 120 25% 8%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 120 45% 45%;
+    --sidebar-primary-foreground: 120 25% 8%;
+    --sidebar-accent: 30 35% 25%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 120 25% 25%;
+    --sidebar-ring: 120 45% 45%;
   }
 }
 
@@ -100,85 +100,188 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Press Start 2P', monospace;
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: 10px;
+    line-height: 1.8;
+    background-image: 
+      linear-gradient(45deg, #8B4513 25%, transparent 25%),
+      linear-gradient(-45deg, #8B4513 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #8B4513 75%),
+      linear-gradient(-45deg, transparent 75%, #8B4513 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   }
 }
 
 @layer components {
-  .pixel-border {
+  .minecraft-border {
     border-style: solid;
-    border-width: 3px;
-    border-image: url("data:image/svg+xml,%3csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m0,0 L0,8 L8,8 L8,0 Z M16,0 L16,8 L24,8 L24,0 Z' fill='%23000'/%3e%3c/svg%3e") 8;
+    border-width: 4px;
+    border-color: #4a4a4a #1a1a1a #1a1a1a #4a4a4a;
+    box-shadow: 
+      inset 2px 2px 0px rgba(255, 255, 255, 0.4),
+      inset -2px -2px 0px rgba(0, 0, 0, 0.6);
   }
   
-  .pixel-shadow {
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  .minecraft-shadow {
+    box-shadow: 
+      4px 4px 0px rgba(0, 0, 0, 0.8),
+      2px 2px 0px rgba(0, 0, 0, 0.4);
   }
   
-  .pixel-button {
-    @apply pixel-border pixel-shadow;
-    background: linear-gradient(45deg, #ff6b6b 0%, #ee5a52 50%, #d63031 100%);
+  .minecraft-button {
+    @apply minecraft-border minecraft-shadow;
+    background: linear-gradient(135deg, #7CB342 0%, #689F38 50%, #558B2F 100%);
     transition: all 0.1s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
   }
   
-  .pixel-button:hover {
+  .minecraft-button:hover {
+    background: linear-gradient(135deg, #8BC34A 0%, #7CB342 50%, #689F38 100%);
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 
+      2px 2px 0px rgba(0, 0, 0, 0.8),
+      1px 1px 0px rgba(0, 0, 0, 0.4);
   }
   
-  .pixel-button:active {
+  .minecraft-button:active {
     transform: translate(4px, 4px);
     box-shadow: none;
   }
   
-  .pixel-card {
-    @apply pixel-border pixel-shadow;
-    background: repeating-conic-gradient(from 0deg, #f8f9fa 0deg 90deg, #e9ecef 90deg 180deg);
+  .minecraft-card {
+    @apply minecraft-border minecraft-shadow;
+    background: linear-gradient(135deg, #D7CCC8 0%, #BCAAA4 50%, #A1887F 100%);
+    position: relative;
   }
   
-  .pixel-input {
-    @apply pixel-border;
-    background: #ffffff;
+  .minecraft-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8D6E63 0%, #6D4C41 100%);
+    z-index: -1;
+  }
+  
+  .minecraft-input {
+    @apply minecraft-border;
+    background: linear-gradient(135deg, #FFF8E1 0%, #F5F5DC 100%);
     font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    padding: 8px;
+    font-size: 8px;
+    padding: 8px 12px;
+    color: #2E2E2E;
   }
   
-  .pixel-input:focus {
+  .minecraft-input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    border-color: #4CAF50 #2E7D32 #2E7D32 #4CAF50;
+    box-shadow: 
+      inset 2px 2px 0px rgba(76, 175, 80, 0.3),
+      inset -2px -2px 0px rgba(46, 125, 50, 0.3);
+  }
+
+  .minecraft-user-bubble {
+    @apply minecraft-border;
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 50%, #2E7D32 100%);
+    color: white;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+  }
+
+  .minecraft-ai-bubble {
+    @apply minecraft-border;
+    background: linear-gradient(135deg, #9E9E9E 0%, #757575 50%, #616161 100%);
+    color: white;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+  }
+
+  .minecraft-header {
+    @apply minecraft-border;
+    background: linear-gradient(135deg, #795548 0%, #5D4037 50%, #3E2723 100%);
+    color: #FFE0B2;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  }
+
+  .minecraft-grass {
+    background: linear-gradient(135deg, #8BC34A 0%, #689F38 50%, #558B2F 100%);
+    position: relative;
+  }
+
+  .minecraft-grass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 50%, #4CAF50 100%);
+  }
+
+  .minecraft-stone {
+    background: linear-gradient(135deg, #9E9E9E 0%, #757575 50%, #424242 100%);
+    position: relative;
+  }
+
+  .minecraft-diamond {
+    background: linear-gradient(135deg, #00BCD4 0%, #0097A7 50%, #006064 100%);
+    position: relative;
   }
 }
 
-/* Pixel-perfect animations */
-@keyframes pixel-bounce {
+/* Minecraft-style animations */
+@keyframes minecraft-bounce {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
-@keyframes pixel-shake {
+@keyframes minecraft-shake {
   0%, 100% { transform: translateX(0px); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
 }
 
-@keyframes pixel-glow {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.2) contrast(1.1); }
+@keyframes minecraft-glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px rgba(76, 175, 80, 0.5),
+      0 0 10px rgba(76, 175, 80, 0.3),
+      0 0 15px rgba(76, 175, 80, 0.2);
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px rgba(76, 175, 80, 0.8),
+      0 0 20px rgba(76, 175, 80, 0.6),
+      0 0 30px rgba(76, 175, 80, 0.4);
+  }
 }
 
-.pixel-animate-bounce {
-  animation: pixel-bounce 1s infinite;
+.minecraft-animate-bounce {
+  animation: minecraft-bounce 1s infinite;
 }
 
-.pixel-animate-shake {
-  animation: pixel-shake 0.5s ease-in-out;
+.minecraft-animate-shake {
+  animation: minecraft-shake 0.5s ease-in-out;
 }
 
-.pixel-animate-glow {
-  animation: pixel-glow 2s ease-in-out infinite;
+.minecraft-animate-glow {
+  animation: minecraft-glow 2s ease-in-out infinite;
+}
+
+/* Minecraft block patterns */
+.minecraft-cobblestone {
+  background-image: 
+    radial-gradient(circle at 25% 25%, #666 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #999 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, #777 1px, transparent 1px);
+  background-size: 8px 8px, 6px 6px, 4px 4px;
+  background-color: #808080;
+}
+
+.minecraft-wood {
+  background-image: 
+    linear-gradient(90deg, #8D6E63 0%, #6D4C41 50%, #8D6E63 100%);
+  background-size: 4px 100%;
 }

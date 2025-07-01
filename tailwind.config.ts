@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'pixel': ['Press Start 2P', 'monospace'],
+				'minecraft': ['Press Start 2P', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -65,6 +65,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Minecraft color palette
+				minecraft: {
+					grass: '#8BC34A',
+					dirt: '#8D6E63',
+					stone: '#9E9E9E',
+					diamond: '#00BCD4',
+					emerald: '#4CAF50',
+					gold: '#FFC107',
+					iron: '#607D8B',
+					redstone: '#F44336',
+					lapis: '#3F51B5',
+					obsidian: '#212121',
+					wood: '#795548',
+					sand: '#FFCC02',
+					water: '#2196F3',
+					lava: '#FF5722'
 				}
 			},
 			borderRadius: {
@@ -89,21 +106,30 @@ export default {
 						height: '0'
 					}
 				},
-				'pixel-bounce': {
+				'minecraft-bounce': {
 					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-8px)' }
+					'50%': { transform: 'translateY(-6px)' }
 				},
-				'pixel-shake': {
+				'minecraft-shake': {
 					'0%, 100%': { transform: 'translateX(0px)' },
-					'25%': { transform: 'translateX(-4px)' },
-					'75%': { transform: 'translateX(4px)' }
+					'25%': { transform: 'translateX(-3px)' },
+					'75%': { transform: 'translateX(3px)' }
+				},
+				'minecraft-glow': {
+					'0%, 100%': { 
+						filter: 'brightness(1) drop-shadow(0 0 5px rgba(76, 175, 80, 0.5))'
+					},
+					'50%': { 
+						filter: 'brightness(1.2) drop-shadow(0 0 15px rgba(76, 175, 80, 0.8))'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pixel-bounce': 'pixel-bounce 1s infinite',
-				'pixel-shake': 'pixel-shake 0.5s ease-in-out'
+				'minecraft-bounce': 'minecraft-bounce 1s infinite',
+				'minecraft-shake': 'minecraft-shake 0.5s ease-in-out',
+				'minecraft-glow': 'minecraft-glow 2s ease-in-out infinite'
 			}
 		}
 	},

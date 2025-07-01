@@ -13,7 +13,7 @@ const AIChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "HELLO! I'M RESQ-AI EMERGENCY ASSISTANT. HOW CAN I HELP YOU TODAY?",
+      text: "GREETINGS, CRAFTER! I'M RESCUE-BOT, YOUR EMERGENCY ASSISTANT. HOW CAN I HELP YOU SURVIVE TODAY?",
       isUser: false,
       timestamp: new Date(),
     }
@@ -22,16 +22,16 @@ const AIChatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // AI responses for demonstration
+  // Minecraft-themed AI responses
   const aiResponses = [
-    "I UNDERSTAND YOUR SITUATION. LET ME HELP YOU WITH THAT. CAN YOU PROVIDE MORE DETAILS ABOUT YOUR LOCATION?",
-    "THANK YOU FOR THE INFORMATION. I'M ANALYZING YOUR SITUATION NOW. HAVE YOU TRIED ANY IMMEDIATE SAFETY MEASURES?",
-    "BASED ON WHAT YOU'VE TOLD ME, HERE ARE SOME IMMEDIATE STEPS YOU CAN TAKE WHILE HELP IS ON THE WAY...",
-    "I'M COORDINATING WITH OUR EMERGENCY RESPONSE TEAM. YOUR CASE HAS BEEN PRIORITIZED. IS THERE ANYONE ELSE WITH YOU?",
-    "HELP IS BEING DISPATCHED TO YOUR LOCATION. PLEASE STAY CALM AND FOLLOW THESE SAFETY INSTRUCTIONS...",
-    "EMERGENCY SERVICES HAVE BEEN NOTIFIED. CAN YOU CONFIRM IF YOU'RE IN A SAFE LOCATION RIGHT NOW?",
-    "I'M MONITORING YOUR SITUATION CLOSELY. ADDITIONAL RESOURCES ARE BEING ALLOCATED TO ASSIST YOU.",
-    "LET ME CONNECT YOU WITH THE APPROPRIATE EMERGENCY SERVICES. WHAT TYPE OF ASSISTANCE DO YOU NEED MOST URGENTLY?",
+    "I SEE YOU NEED HELP! LET ME CRAFT A SOLUTION FOR YOUR SITUATION. CAN YOU TELL ME MORE ABOUT YOUR COORDINATES?",
+    "UNDERSTOOD, CRAFTER. I'M BREWING UP SOME ASSISTANCE FOR YOU. HAVE YOU SECURED YOUR IMMEDIATE AREA?",
+    "BASED ON YOUR INTEL, HERE ARE SOME SURVIVAL STRATEGIES WHILE RESCUE MOBS ARE BEING DEPLOYED...",
+    "I'M COORDINATING WITH THE RESCUE GUILD. YOUR QUEST HAS BEEN MARKED AS HIGH PRIORITY. ARE THERE OTHER PLAYERS WITH YOU?",
+    "HELP IS BEING TELEPORTED TO YOUR LOCATION. STAY CALM AND FOLLOW THESE SAFETY PROTOCOLS...",
+    "EMERGENCY SERVICES HAVE BEEN NOTIFIED VIA REDSTONE SIGNAL. CONFIRM IF YOU'RE IN A SAFE SHELTER?",
+    "I'M MONITORING YOUR SITUATION LIKE A GUARDIAN. ADDITIONAL RESOURCES ARE BEING ALLOCATED TO YOUR COORDINATES.",
+    "LET ME CONNECT YOU WITH THE APPROPRIATE RESCUE SPECIALISTS. WHAT TYPE OF ASSISTANCE DO YOU NEED MOST URGENTLY?",
   ];
 
   const scrollToBottom = () => {
@@ -76,20 +76,20 @@ const AIChatbot = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pixel-card h-[600px] flex flex-col font-pixel">
+    <div className="max-w-4xl mx-auto minecraft-card h-[600px] flex flex-col font-minecraft">
       {/* Chat Header */}
-      <div className="bg-red-600 text-white p-4 flex-shrink-0 pixel-border border-b-0">
+      <div className="minecraft-header p-4 flex-shrink-0">
         <div className="flex items-center">
-          <Bot className="h-8 w-8 mr-3 pixel-animate-bounce" />
+          <Bot className="h-6 w-6 mr-3 minecraft-animate-bounce text-minecraft-emerald" />
           <div>
-            <h3 className="text-sm font-bold">RESQ-AI EMERGENCY ASSISTANT</h3>
-            <p className="text-red-100 text-xs">AI-POWERED EMERGENCY RESPONSE SUPPORT</p>
+            <h3 className="text-xs font-bold">⛏️ RESCUE-BOT EMERGENCY SYSTEM ⛏️</h3>
+            <p className="text-orange-200 text-xs mt-1">MINECRAFT-POWERED EMERGENCY RESPONSE</p>
           </div>
         </div>
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-100">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 minecraft-cobblestone">
         {messages.map((message) => (
           <div
             key={message.id}
@@ -98,27 +98,25 @@ const AIChatbot = () => {
             <div className={`flex max-w-xs lg:max-w-md ${message.isUser ? 'flex-row-reverse' : 'flex-row'}`}>
               {/* Avatar */}
               <div className={`flex-shrink-0 ${message.isUser ? 'ml-3' : 'mr-3'}`}>
-                <div className={`w-8 h-8 flex items-center justify-center pixel-border ${
-                  message.isUser ? 'bg-blue-500' : 'bg-green-500'
+                <div className={`w-8 h-8 flex items-center justify-center minecraft-border ${
+                  message.isUser ? 'minecraft-diamond' : 'minecraft-grass'
                 }`}>
                   {message.isUser ? (
-                    <User className="h-4 w-4 text-white" />
+                    <User className="h-3 w-3 text-white" />
                   ) : (
-                    <Bot className="h-4 w-4 text-white" />
+                    <Bot className="h-3 w-3 text-white" />
                   )}
                 </div>
               </div>
 
               {/* Message Bubble */}
-              <div className={`px-4 py-2 pixel-shadow pixel-border ${
+              <div className={`px-3 py-2 minecraft-shadow ${
                 message.isUser 
-                  ? 'bg-blue-500 text-white' 
-                  : 'bg-white text-gray-800'
+                  ? 'minecraft-user-bubble' 
+                  : 'minecraft-ai-bubble'
               }`}>
-                <p className="text-xs">{message.text}</p>
-                <p className={`text-xs mt-1 ${
-                  message.isUser ? 'text-blue-100' : 'text-gray-500'
-                }`}>
+                <p className="text-xs leading-relaxed">{message.text}</p>
+                <p className={`text-xs mt-1 opacity-75`}>
                   {formatTime(message.timestamp)}
                 </p>
               </div>
@@ -130,15 +128,15 @@ const AIChatbot = () => {
         {isTyping && (
           <div className="flex justify-start animate-fade-in">
             <div className="flex mr-3">
-              <div className="w-8 h-8 bg-green-500 flex items-center justify-center pixel-border">
-                <Bot className="h-4 w-4 text-white" />
+              <div className="w-8 h-8 minecraft-grass flex items-center justify-center minecraft-border">
+                <Bot className="h-3 w-3 text-white" />
               </div>
             </div>
-            <div className="bg-white text-gray-800 pixel-border px-4 py-2 pixel-shadow">
+            <div className="minecraft-ai-bubble px-3 py-2 minecraft-shadow">
               <div className="flex space-x-1">
-                <div className="w-2 h-2 bg-gray-400 animate-bounce"></div>
-                <div className="w-2 h-2 bg-gray-400 animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-gray-400 animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 bg-white rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
               </div>
             </div>
           </div>
@@ -148,21 +146,21 @@ const AIChatbot = () => {
       </div>
 
       {/* Message Input */}
-      <div className="pixel-border border-t-0 p-4 flex-shrink-0 bg-gray-50">
+      <div className="minecraft-wood p-4 flex-shrink-0">
         <form onSubmit={handleSendMessage} className="flex space-x-3">
           <input
             type="text"
             value={currentMessage}
             onChange={(e) => setCurrentMessage(e.target.value)}
             placeholder="TYPE YOUR EMERGENCY MESSAGE..."
-            className="flex-1 pixel-input text-xs uppercase"
+            className="flex-1 minecraft-input text-xs uppercase"
           />
           <button
             type="submit"
             disabled={!currentMessage.trim()}
-            className="pixel-button text-white px-6 py-2 disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center text-xs"
+            className="minecraft-button text-white px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center text-xs minecraft-animate-glow"
           >
-            <Send className="h-4 w-4" />
+            <Send className="h-3 w-3" />
           </button>
         </form>
       </div>
